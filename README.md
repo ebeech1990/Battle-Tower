@@ -65,4 +65,9 @@ Pokemon
             Speed = floor(floor(129.02) * 1)
             Speed = floor(129 * 1)
             Speed = 129
+            
+    Battle
+      
+      P(base power of move) A(offensive stat) D(defensive stat)
+      Damage = floor(floor(floor(2 * L / 5 + 2) * A * P / D) / 50) + 2
     
