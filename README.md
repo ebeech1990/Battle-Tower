@@ -4,7 +4,7 @@ The repo for a currently in development project by Emily Beech, James Wilkinson,
 create a Pokemon battle simulator, with the intent to simulate Pokemon tournaments with various players and simple AI
 opponents
 
-Tenatively planning to use [Pokekotlin API][https://github.com/PokeAPI/pokekotlin]
+Tenatively planning to use [Pokekotlin API](https://github.com/PokeAPI/pokekotlin).
 
 >Pokemon
 >  Gen 1 (no held items, status conditions) (using spatk and spdef instead of just spec)
