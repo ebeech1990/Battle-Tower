@@ -9,10 +9,17 @@ public enum Types {
     ELECTRIC("WATER", "GROUND"),
     GRASS("WATER", "FIRE"),
     ICE("GRASS", "FIRE"),
-    FIGHTING("NORMAL","FLYING"),
-    POISON("GRASS", "GROUND"),
-    //GROUND("")
-    GHOST("GHOST", "NORMAL");
+    FIGHTING("NORMAL","POISON"),
+    POISON("GRASS", "POISON"),
+    GROUND("FIRE", "GRASS"),
+    BUG("GRASS", "FIRE"),
+    DARK("GHOST", "FIGHTING"),
+    DRAGON("DRAGON", "ICE"),
+    FLYING("GRASS", "ELECTRIC"),
+    PSYCHIC("FIGHTING", "PSYCHIC"),
+    GHOST("GHOST", "DARK"),
+    ROCK("ICE", "FIGHTING"),
+    STEEL("ICE", "WATER");
 
     String strongAgainst;
     String weakAgainst;
