@@ -2,6 +2,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestPokemon {
@@ -16,6 +17,8 @@ public class TestPokemon {
 
     @Before
     public void init(){
+            agathaArbok = new ArrayList<>();
+            joeyRattata = new ArrayList<>();
             agathaArbok.add(new Moves("Bite",Types.DARK, 60, 100, 25));
             agathaArbok.add(new Moves("Glare", Types.NORMAL, 10, 75,30)); //power 0
             agathaArbok.add(new Moves("Screech", Types.NORMAL, 10,85,40)); //power 0
@@ -30,33 +33,27 @@ public class TestPokemon {
 //         tentacool = new Pokemon("Tentacool", Types.WATER);
 //         rowlet = new Pokemon("Rowlet", Types.GRASS);
 //         gengar = new Pokemon("Gengar", Types.GHOST);
-         rattata = new Pokemon("Rattata", Types.NORMAL, joeyRattata);
-         arbok = new Pokemon("Arbok", Types.POISON, agathaArbok);
+         rattata = new Pokemon("Rattata", 60, Types.NORMAL, joeyRattata);
+         arbok = new Pokemon("Arbok", 80, Types.POISON, agathaArbok);
     }
 
     @Test
-    public void testBattle1(){
-        Pokemon a = growlithe;
-        Pokemon b = tentacool;
-        String winner =  a.battle(b);
-        Assert.assertEquals(tentacool.getName(),winner);
+    public void testPokemonTypeAdv1(){
+        Pokemon a = rattata;
+        Pokemon b = arbok;
+        String winner =  a.pokemonTypeAdvantage(b);
+        Assert.assertEquals(rattata.getName(),winner);
     }
 
     @Test
-    public void testBattle2(){
+    public void testPokemonTypeAdv2(){
         Pokemon a = rowlet;
         Pokemon b = tentacool;
-        String winner =  a.battle(b);
+        String winner =  a.pokemonTypeAdvantage(b);
         Assert.assertEquals(rowlet.getName(),winner);
     }
 
-    @Test
-    public void testBattle3(){
-        Pokemon a = rattata;
-        Pokemon b = gengar;
-        String winner =  a.battle(b);
-        Assert.assertEquals(rattata.getName(),winner);
-    }
+
 
 
 }

@@ -20,6 +20,10 @@ public class Pokemon {
         startingHP = hp;
     }
 
+    public void addMove(Moves m) {
+        this.moves.add(m);
+    }
+
     public Integer getStartingHP(){
         return startingHP;
     }

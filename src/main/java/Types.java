@@ -3,7 +3,7 @@ import org.omg.CORBA.PUBLIC_MEMBER;
 import java.util.Comparator;
 
 public enum Types {
-    NORMAL("GHOST", "FIGHTING"),//normal not strong against anything but is resistant to ghost
+    NORMAL("POISON", "FIGHTING"),//normal not strong against anything but is resistant to ghost
     FIRE("GRASS","WATER"),
     WATER("FIRE", "GRASS"),
     ELECTRIC("WATER", "GROUND"),
