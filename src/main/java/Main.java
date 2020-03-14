@@ -4,6 +4,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        Trainers agatha = new Trainers("Agatha");
+        Trainers youngsterJoey = new Trainers("Youngster Joey");
+
         Pokemon golbat = new Pokemon("Golbat", 75, Types.POISON);
         Pokemon arbok = new Pokemon("Arbok", 80, Types.POISON);
 
@@ -40,17 +43,17 @@ public class Main {
         raticate.addMove(quickAttack);
         raticate.addMove(hyperFang);
 
-       List<Pokemon> agathaTeam = new ArrayList<>();
-       List<Pokemon> joeyTeam = new ArrayList<>();
 
-        agathaTeam.add(golbat);
-        agathaTeam.add(arbok);
+        agatha.addPokemon(golbat);
+        agatha.addPokemon(arbok);
+        golbat.setTrainer(agatha);
+        arbok.setTrainer(agatha);
 
-        joeyTeam.add(rattata);
-        joeyTeam.add(raticate);
+        youngsterJoey.addPokemon(rattata);
+        youngsterJoey.addPokemon(raticate);
+        rattata.setTrainer(youngsterJoey);
+        raticate.setTrainer(youngsterJoey);
 
-       Trainers agatha = new Trainers("Agatha", agathaTeam);
-       Trainers youngsterJoey = new Trainers("Youngster Joey", joeyTeam);
 
        Battle b = new Battle(agatha,youngsterJoey);
         b.battling();

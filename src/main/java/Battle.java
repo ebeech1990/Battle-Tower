@@ -41,6 +41,8 @@ public class Battle {
         return opponent.getBattlingPokemon();
     }
 
+
+
     public void round(){
        Pokemon a = player.getBattlingPokemon();
        Pokemon b =  opponent.getBattlingPokemon();

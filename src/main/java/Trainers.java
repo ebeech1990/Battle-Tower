@@ -15,12 +15,19 @@ public class Trainers {
         loses = 0;
     }
 
+    public Trainers(String name){
+        this.name = name;
+        this.team = new ArrayList<Pokemon>();
+        wins = 0;
+        loses = 0;
+    }
+
     public List<Pokemon> getTeam() {
         return team;
     }
 
-    public void setTeam(List<Pokemon> team) {
-        this.team = team;
+    public void addPokemon(Pokemon p) {
+        this.team.add(p);
     }
 
     public String getName() {
@@ -56,6 +63,8 @@ public class Trainers {
         }
         return null;
     }
+
+
 
     public Boolean outOfPokemon(){
         if(getBattlingPokemon() == null){

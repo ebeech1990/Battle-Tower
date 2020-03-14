@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pokemon {
+    private Trainers trainer;
     private String name;
     private Integer hp;
     private Types type;
@@ -20,8 +21,18 @@ public class Pokemon {
         startingHP = hp;
     }
 
+
+
     public void addMove(Moves m) {
         this.moves.add(m);
+    }
+
+    public Trainers getTrainer(){
+        return trainer;
+    }
+
+    public void setTrainer(Trainers t){
+        this.trainer = t;
     }
 
     public Integer getStartingHP(){
@@ -74,12 +85,15 @@ public class Pokemon {
         this.setHp(this.getHp() - amountToDecrement);
         if(hasFainted()){
             this.setHasFainted(true);
-            return -1;
+            this.setBattling(false);
+            System.out.println(this.getName() + " has fainted.");
+            trainer.getBattlingPokemon();
         }
         return this.getHp();
     }
 
     public Boolean hasFainted(){
+
         return this.getHp() <= 0;
     }
 
@@ -102,6 +116,7 @@ public class Pokemon {
 
     public Boolean isSuperEffective(Moves m){ //move on pokemon
         if(this.getType().weakAgainst.equals(m.getType().toString())){
+            System.out.println("super effective!");
             return true;
         }
         return false;
@@ -125,8 +140,10 @@ public class Pokemon {
     }
 
     public void takeDamage(){
-        System.out.println(this.getName() + " took " + attack() + " damage. Current hp: " + this.getHp());
-        this.setHp(decrementHP(attack()));
+        Integer damage = attack();
+        System.out.println("Current hp: " + this.getHp());
+        decrementHP(damage);
 
+        System.out.println(this.getName() + " took " + attack() + " damage. Current hp: " + this.getHp());
     }
 }
