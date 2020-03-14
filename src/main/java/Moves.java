@@ -84,6 +84,20 @@ public class Moves {
 
 
 
+    public Integer decrementPP(){
+        this.setPp(this.getPp()-1);
+        if(outOfPP()){
+            this.setUseable(false);
+            return -1;
+        }
+        return this.getPp();
+    }
 
+    public Boolean outOfPP(){
+        if(this.getPp()<=0){
+            return true;
+        }
+        return false;
+    }
 
 }

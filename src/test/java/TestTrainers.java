@@ -18,13 +18,13 @@ public class TestTrainers {
     private List<Pokemon> joeyTeam;
 
     @Before
-    public void init(){
+    public void init() {
         agathaArbok = new ArrayList<>();
         joeyRattata = new ArrayList<>();
 
-        agathaArbok.add(new Moves("Bite",Types.DARK, 60, 100, 25));
-        agathaArbok.add(new Moves("Glare", Types.NORMAL, 10, 75,30)); //power 0
-        agathaArbok.add(new Moves("Screech", Types.NORMAL, 10,85,40)); //power 0
+        agathaArbok.add(new Moves("Bite", Types.DARK, 60, 100, 25));
+        agathaArbok.add(new Moves("Glare", Types.NORMAL, 10, 75, 30)); //power 0
+        agathaArbok.add(new Moves("Screech", Types.NORMAL, 10, 85, 40)); //power 0
         agathaArbok.add(new Moves("Acid", Types.POISON, 40, 100, 30));
 
         joeyRattata.add(new Moves("Tackle", Types.NORMAL, 40, 100, 35));
@@ -32,11 +32,11 @@ public class TestTrainers {
         joeyRattata.add(new Moves("Quick Attack", Types.NORMAL, 40, 100, 30));
         joeyRattata.add(new Moves("Hyper Fang", Types.NORMAL, 80, 90, 15));
 
-        golbat = new Pokemon("Golbat", 75, Types.POISON, agathaArbok);
-        arbok = new Pokemon("Arbok", 80, Types.POISON, agathaArbok);
+        golbat = new Pokemon("Golbat", 75, Types.POISON);
+        arbok = new Pokemon("Arbok", 80, Types.POISON);
 
-        rattata = new Pokemon("Rattata", 60, Types.NORMAL, joeyRattata);
-        raticate = new Pokemon("Raticate", 80, Types.NORMAL, joeyRattata);
+        rattata = new Pokemon("Rattata", 60, Types.NORMAL);
+        raticate = new Pokemon("Raticate", 80, Types.NORMAL);
 
         agathaTeam = new ArrayList<>();
         joeyTeam = new ArrayList<>();
@@ -47,14 +47,21 @@ public class TestTrainers {
         joeyTeam.add(rattata);
         joeyTeam.add(raticate);
 
-        agatha = new Trainers("Agatha",agathaTeam);
-        youngsterJoey = new Trainers("Youngster Joey",joeyTeam);
+        agatha = new Trainers("Agatha", agathaTeam);
+        youngsterJoey = new Trainers("Youngster Joey", joeyTeam);
 
     }
 
     @Test
-    public void numOfPokemonTest(){
-        System.out.println(agatha.getTeam().size());
+    public void numOfPokemonTest() {
         Assert.assertTrue(agatha.getTeam().size() == 2);
     }
+
+    @Test
+    public void battle(){
+        Battle b = new Battle(youngsterJoey,agatha);
+
+    }
 }
+
+

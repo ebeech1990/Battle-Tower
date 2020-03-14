@@ -10,7 +10,7 @@ public class Pokemon {
     private Boolean hasFainted;
     private Integer startingHP;
 
-    public Pokemon(String name, Integer hp, Types type, List<Moves> moves){
+    public Pokemon(String name, Integer hp, Types type){
         this.name = name;
         this.hp = hp;
         this.type = type;
@@ -68,59 +68,65 @@ public class Pokemon {
         this.hasFainted = hasFainted;
     }
 
-    public Pokemon whoGoesFirst(Pokemon opponent){
-        Integer num = BattleUtils.getRandomNumber(1,3);
-        //will compare speed stat later
-        if(num == 1){
-            return this;
+
+
+    public Integer decrementHP(Integer amountToDecrement){
+        this.setHp(this.getHp() - amountToDecrement);
+        if(hasFainted()){
+            this.setHasFainted(true);
+            return -1;
         }
-        return opponent;
+        return this.getHp();
     }
 
-    public Boolean isSuperEffective(Moves move){ //move on pokemon
-        if(this.getType().strongAgainst.equals(move.getType().toString())){
-            move.setPower(move.getPower()*2);
+    public Boolean hasFainted(){
+        return this.getHp() <= 0;
+    }
+
+
+
+    public Moves pickMove(){
+        //random for now
+        Integer numOfMoves = 0;
+        for(Moves m : moves){
+            if(!m.outOfPP()){
+                numOfMoves++;
+            }
+        }
+        Integer randomNum = BattleUtils.getRandomNumber(0, numOfMoves-1);
+       Moves pickedMove = this.moves.get(randomNum);
+        System.out.println(this.getName() + " used " + pickedMove.getName());
+        pickedMove.decrementPP();
+        return pickedMove;
+    }
+
+    public Boolean isSuperEffective(Moves m){ //move on pokemon
+        if(this.getType().weakAgainst.equals(m.getType().toString())){
             return true;
         }
         return false;
     }
 
-    public String pokemonTypeAdvantage(Pokemon opponent){
-        if(this.getType().weakAgainst.equals(opponent.getType().toString())){
-            return opponent.getName();
+    public Integer damageToDeal(){
+        Moves move = pickMove();
+        Integer damage;
+        if (isSuperEffective(move)){
+            damage = move.getPower()*2;
         }
-        else if(this.getType().strongAgainst.equals(opponent.getType().toString())){
-            return this.getName();
+        else {
+            damage = move.getPower();
         }
-        return "tie";
+        return damage;
     }
 
-    public Integer decrementPP(Moves move){
-        move.setPp(move.getPp()-1);
-        if(outOfPP(move)){
-            move.setUseable(false);
-            return -1;
-        }
-        return move.getPp();
+    public Integer attack(){
+        Integer damage = damageToDeal();
+        return damage;
     }
 
-    public Integer decrementHP(Pokemon defender, Integer amountToDecrement){
-        defender.setHp(defender.getHp() - amountToDecrement);
-        if(hasFainted(defender)){
-            defender.setHasFainted(true);
-            return -1;
-        }
-        return defender.getHp();
-    }
+    public void takeDamage(){
+        System.out.println(this.getName() + " took " + attack() + " damage. Current hp: " + this.getHp());
+        this.setHp(decrementHP(attack()));
 
-    public Boolean hasFainted(Pokemon pokemon){
-        return pokemon.getHp() <= 0;
-    }
-
-    public Boolean outOfPP(Moves move){
-        if(move.getPp()<=0){
-            return true;
-        }
-        return false;
     }
 }
