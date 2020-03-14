@@ -58,6 +58,7 @@ public class Trainers {
         for(Pokemon p : team){
             if(!p.hasFainted()){
                 p.setBattling(true);
+                System.out.println(this.getName() + " sent out " + p.getName());
                 return p;
             }
         }

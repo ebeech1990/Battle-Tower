@@ -141,7 +141,7 @@ public class Pokemon {
 
     public void takeDamage(){
         Integer damage = attack();
-        System.out.println("Current hp: " + this.getHp());
+        System.out.println(this.getName() + " current hp: " + this.getHp());
         decrementHP(damage);
 
         System.out.println(this.getName() + " took " + attack() + " damage. Current hp: " + this.getHp());
