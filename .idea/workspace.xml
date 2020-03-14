@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92a2c978-b2d9-4a09-9363-4194f0f4a4b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/PokemonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TrainersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Moves.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Moves.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Trainers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trainers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestPokemon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestTrainers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Battle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Battle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Pokemon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Trainers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Trainers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestPokemon.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestTrainers.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +28,7 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Arquillian JUnit Test Class" />
       </list>
     </option>
   </component>
@@ -44,6 +54,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -55,7 +67,15 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.PokemonTest.isSuperEffective">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Battle-Tower" />
@@ -63,38 +83,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in Battle-Tower" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PokemonTest.decrementHP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Battle-Tower" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Battle-Tower" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestPokemon" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestPokemon.testPokemonTypeAdv1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Battle-Tower" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestPokemon" />
-      <option name="METHOD_NAME" value="testPokemonTypeAdv1" />
+      <option name="MAIN_CLASS_NAME" value="PokemonTest" />
+      <option name="METHOD_NAME" value="decrementHP" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTrainers.numOfPokemonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PokemonTest.getHasFainted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Battle-Tower" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestTrainers" />
-      <option name="METHOD_NAME" value="numOfPokemonTest" />
+      <option name="MAIN_CLASS_NAME" value="PokemonTest" />
+      <option name="METHOD_NAME" value="getHasFainted" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest.isSuperEffective" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Battle-Tower" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PokemonTest" />
+      <option name="METHOD_NAME" value="isSuperEffective" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest.pickMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Battle-Tower" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PokemonTest" />
+      <option name="METHOD_NAME" value="pickMove" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PokemonTest.isSuperEffective" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.TestTrainers.numOfPokemonTest" />
-        <item itemvalue="JUnit.TestPokemon.testPokemonTypeAdv1" />
-        <item itemvalue="JUnit.TestPokemon" />
-        <item itemvalue="JUnit.All in Battle-Tower" />
+        <item itemvalue="JUnit.PokemonTest.pickMove" />
+        <item itemvalue="JUnit.PokemonTest.decrementHP" />
+        <item itemvalue="JUnit.PokemonTest.getHasFainted" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +144,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584046674324</updated>
       <workItem from="1584046676263" duration="20269000" />
-      <workItem from="1584189858303" duration="12630000" />
+      <workItem from="1584189858303" duration="19065000" />
     </task>
     <servers />
   </component>
@@ -133,63 +156,75 @@
       <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="250" y="31" key="#Project_Structure/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584110978319" />
+    <state x="100" y="100" width="1080" height="600" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584206712454">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="100" y="100" width="1080" height="600" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584206712454" />
     <state x="463" y="36" key="#com.intellij.ide.util.MemberChooser" timestamp="1584191831346">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="463" y="36" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584191831346" />
     <state x="463" y="56" key="#com.intellij.ide.util.MemberChooser/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584119568090" />
-    <state width="1238" height="211" key="GridCell.Tab.0.bottom" timestamp="1584202951146">
+    <state width="1238" height="211" key="GridCell.Tab.0.bottom" timestamp="1584210295156">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.bottom/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202951146" />
+    <state width="1238" height="211" key="GridCell.Tab.0.bottom/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584210295156" />
     <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104566002" />
     <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353910" />
     <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.728@0.23.1280.728" timestamp="1584061280652" />
     <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873943" />
-    <state width="1238" height="211" key="GridCell.Tab.0.center" timestamp="1584202951144">
+    <state width="1238" height="211" key="GridCell.Tab.0.center" timestamp="1584210295155">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.center/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202951144" />
+    <state width="1238" height="211" key="GridCell.Tab.0.center/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584210295155" />
     <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104565997" />
     <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353909" />
     <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.728@0.23.1280.728" timestamp="1584061280651" />
     <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873936" />
-    <state width="1238" height="211" key="GridCell.Tab.0.left" timestamp="1584202951143">
+    <state width="1238" height="211" key="GridCell.Tab.0.left" timestamp="1584210295153">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.left/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202951143" />
+    <state width="1238" height="211" key="GridCell.Tab.0.left/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584210295153" />
     <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104565996" />
     <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353908" />
     <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.728@0.23.1280.728" timestamp="1584061280651" />
     <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873926" />
-    <state width="1238" height="211" key="GridCell.Tab.0.right" timestamp="1584202951145">
+    <state width="1238" height="211" key="GridCell.Tab.0.right" timestamp="1584210295155">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="211" key="GridCell.Tab.0.right/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202951145" />
+    <state width="1238" height="211" key="GridCell.Tab.0.right/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584210295155" />
     <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104565998" />
     <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353909" />
     <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.728@0.23.1280.728" timestamp="1584061280652" />
     <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873939" />
-    <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1584202522993">
+    <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1584205074965">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="263" key="GridCell.Tab.1.bottom/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202522993" />
-    <state width="1238" height="263" key="GridCell.Tab.1.center" timestamp="1584202522990">
+    <state width="1238" height="263" key="GridCell.Tab.1.bottom/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584205074965" />
+    <state width="1238" height="263" key="GridCell.Tab.1.center" timestamp="1584205074962">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="263" key="GridCell.Tab.1.center/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202522990" />
-    <state width="1238" height="263" key="GridCell.Tab.1.left" timestamp="1584202522989">
+    <state width="1238" height="263" key="GridCell.Tab.1.center/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584205074962" />
+    <state width="1238" height="263" key="GridCell.Tab.1.left" timestamp="1584205074961">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="263" key="GridCell.Tab.1.left/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202522989" />
-    <state width="1238" height="263" key="GridCell.Tab.1.right" timestamp="1584202522992">
+    <state width="1238" height="263" key="GridCell.Tab.1.left/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584205074961" />
+    <state width="1238" height="263" key="GridCell.Tab.1.right" timestamp="1584205074963">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="263" key="GridCell.Tab.1.right/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584202522992" />
+    <state width="1238" height="263" key="GridCell.Tab.1.right/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584205074963" />
+    <state x="178" y="62" key="Maven.ArtifactSearchDialog" timestamp="1584205464156">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="178" y="62" key="Maven.ArtifactSearchDialog/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584205464156" />
     <state x="164" y="-959" key="SettingsEditor" timestamp="1584120973045">
       <screen x="-284" y="-1080" width="1920" height="1080" />
     </state>
     <state x="164" y="-959" key="SettingsEditor/0.0.1280.800/-284.-1080.1920.1080@-284.-1080.1920.1080" timestamp="1584120973045" />
+    <state x="412" y="134" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584208901445">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="412" y="134" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584208901445" />
     <state x="308" y="122" width="683" height="486" key="find.popup" timestamp="1584046771067">
       <screen x="0" y="23" width="1280" height="728" />
     </state>
@@ -198,41 +233,5 @@
       <screen x="0" y="23" width="1280" height="728" />
     </state>
     <state x="315" y="75" width="670" height="676" key="search.everywhere.popup/0.23.1280.728@0.23.1280.728" timestamp="1584060297255" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Battle.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Battle.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Battle.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Battle.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Battle.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Battle.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

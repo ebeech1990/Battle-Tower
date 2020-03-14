@@ -58,6 +58,7 @@ public class Battle {
     public void battling(){
         while (!endBattle()){
             round();
+            System.out.println("end round");
         }
     }
 
