@@ -55,13 +55,23 @@ public class Trainers {
     }
 
     public Pokemon getBattlingPokemon(){
+        Integer index = 0;
+        Integer count = team.size();
+        while (count > 0)
         for(Pokemon p : team){
             if(!p.hasFainted()){
                 p.setBattling(true);
+                index=team.indexOf(p);
                 System.out.println(this.getName() + " sent out " + p.getName());
-                return p;
+                return team.get(index);
             }
+            else {
+                count--;
+            }
+
         }
+
+
         return null;
     }
 

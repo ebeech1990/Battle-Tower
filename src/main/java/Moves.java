@@ -95,6 +95,7 @@ public class Moves {
 
     public Boolean outOfPP(){
         if(this.getPp()<=0){
+            this.setUseable(false);
             return true;
         }
         return false;

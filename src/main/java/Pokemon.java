@@ -27,6 +27,10 @@ public class Pokemon {
         this.moves.add(m);
     }
 
+    public List<Moves> getMoves(){
+        return moves;
+    }
+
     public Trainers getTrainer(){
         return trainer;
     }
@@ -82,12 +86,14 @@ public class Pokemon {
 
 
     public Integer decrementHP(Integer amountToDecrement){
-        this.setHp(this.getHp() - amountToDecrement);
-        if(hasFainted()){
+        if(this.getHp()-amountToDecrement <= 0){
             this.setHasFainted(true);
             this.setBattling(false);
             System.out.println(this.getName() + " has fainted.");
             trainer.getBattlingPokemon();
+        }
+        else{
+            this.setHp(this.getHp() - amountToDecrement);
         }
         return this.getHp();
     }
@@ -97,18 +103,21 @@ public class Pokemon {
         return this.getHp() <= 0;
     }
 
-
-
-    public Moves pickMove(){
-        //random for now
+    public Integer getMovesWithPP(){
         Integer numOfMoves = 0;
         for(Moves m : moves){
             if(!m.outOfPP()){
                 numOfMoves++;
             }
         }
+        return numOfMoves;
+    }
+
+    public Moves pickMove(){
+        //random for now
+        Integer numOfMoves = getMovesWithPP();
         Integer randomNum = BattleUtils.getRandomNumber(0, numOfMoves-1);
-       Moves pickedMove = this.moves.get(randomNum);
+        Moves pickedMove = this.moves.get(randomNum);
         System.out.println(this.getName() + " used " + pickedMove.getName());
         pickedMove.decrementPP();
         return pickedMove;
