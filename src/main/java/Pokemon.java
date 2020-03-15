@@ -10,6 +10,7 @@ public class Pokemon {
     private Boolean isBattling;
     private Boolean hasFainted;
     private Integer startingHP;
+    private Moves currentMove;
 
     public Pokemon(String name, Integer hp, Types type){
         this.name = name;
@@ -83,24 +84,23 @@ public class Pokemon {
         this.hasFainted = hasFainted;
     }
 
-
-
-    public Integer decrementHP(Integer amountToDecrement){
-        if(this.getHp()-amountToDecrement <= 0){
-            this.setHasFainted(true);
-            this.setBattling(false);
-            System.out.println(this.getName() + " has fainted.");
-            trainer.getBattlingPokemon();
-        }
-        else{
-            this.setHp(this.getHp() - amountToDecrement);
-        }
-        return this.getHp();
+    public void setCurrentMove(Moves move){
+            this.currentMove = move;
     }
+
+    public Moves getCurrentMove(){
+        return currentMove;
+    }
+
 
     public Boolean hasFainted(){
 
         return this.getHp() <= 0;
+    }
+
+    public void fainted(){
+        this.setBattling(false);
+        this.setHasFainted(true);
     }
 
     public Integer getMovesWithPP(){
@@ -119,40 +119,10 @@ public class Pokemon {
         Integer randomNum = BattleUtils.getRandomNumber(0, numOfMoves-1);
         Moves pickedMove = this.moves.get(randomNum);
         System.out.println(this.getName() + " used " + pickedMove.getName());
+        setCurrentMove(pickedMove);
         pickedMove.decrementPP();
         return pickedMove;
     }
 
-    public Boolean isSuperEffective(Moves m){ //move on pokemon
-        if(this.getType().weakAgainst.equals(m.getType().toString())){
-            System.out.println("super effective!");
-            return true;
-        }
-        return false;
-    }
 
-    public Integer damageToDeal(){
-        Moves move = pickMove();
-        Integer damage;
-        if (isSuperEffective(move)){
-            damage = move.getPower()*2;
-        }
-        else {
-            damage = move.getPower();
-        }
-        return damage;
-    }
-
-    public Integer attack(){
-        Integer damage = damageToDeal();
-        return damage;
-    }
-
-    public void takeDamage(){
-        Integer damage = attack();
-        System.out.println(this.getName() + " current hp: " + this.getHp());
-        decrementHP(damage);
-
-        System.out.println(this.getName() + " took " + attack() + " damage. Current hp: " + this.getHp());
-    }
 }

@@ -7,17 +7,19 @@ public class Trainers {
     private String name;
     private Integer wins;
     private Integer loses;
+    private Pokemon activePokemon;
     public Trainers(String name, List<Pokemon> team){
         this.name = name;
-        this.team = new ArrayList<Pokemon>();
+        this.team = new ArrayList<>();
         this.team = team;
         wins = 0;
         loses = 0;
+        activePokemon = null;
     }
 
     public Trainers(String name){
         this.name = name;
-        this.team = new ArrayList<Pokemon>();
+        this.team = new ArrayList<>();
         wins = 0;
         loses = 0;
     }
@@ -54,25 +56,41 @@ public class Trainers {
         this.loses = loses;
     }
 
-    public Pokemon getBattlingPokemon(){
-        Integer index = 0;
-        Integer count = team.size();
-        while (count > 0)
-        for(Pokemon p : team){
-            if(!p.hasFainted()){
-                p.setBattling(true);
-                index=team.indexOf(p);
-                System.out.println(this.getName() + " sent out " + p.getName());
-                return team.get(index);
-            }
-            else {
-                count--;
-            }
+    public Pokemon getActivePokemon(){
+        return activePokemon;
+    }
 
+    public Pokemon getBattlingPokemon(){
+
+        if(activePokemon == null){
+            activePokemon = team.get(0);
+            activePokemon.setBattling(true);
+            System.out.println(this.getName() + " sent out " + activePokemon.getName());
+            return activePokemon;
+        }
+
+        else if(!activePokemon.getHasFainted()){
+            return activePokemon;
         }
 
 
-        return null;
+            List<Pokemon> active = new ArrayList<>();
+            for(Pokemon p : team){
+                if(!p.getHasFainted()){
+                    active.add(p);
+                }
+            }
+
+            if(active.size() == 0){
+                return null;
+            }
+            else{
+                activePokemon = active.get(0);
+                activePokemon.setBattling(true);
+                System.out.println(this.getName() + " sent out " + activePokemon.getName());
+                return active.get(0);
+            }
+
     }
 
 

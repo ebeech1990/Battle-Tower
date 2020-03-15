@@ -9,6 +9,7 @@ public class Moves {
     private Integer originalAccuracy;
     private Integer originalPower;
 
+
     public Moves(String name, Types type, Integer power, Integer accuracy, Integer pp){
         this.name = name;
         this.type = type;
@@ -19,6 +20,7 @@ public class Moves {
         originalPP = pp;
         originalAccuracy = accuracy;
         originalPower = power;
+
     }
 
     public Integer getOriginalPP() {
@@ -80,7 +82,6 @@ public class Moves {
     public void setUseable(boolean useable) {
         this.useable = useable;
     }
-
 
 
 
