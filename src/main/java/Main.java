@@ -12,6 +12,7 @@ public class Main {
 
         Pokemon rattata = new Pokemon("Rattata", 60, Types.NORMAL);
         Pokemon raticate = new Pokemon("Raticate", 80, Types.NORMAL);
+        Pokemon kangaskhan = new Pokemon("Kangaskhan", 200, Types.NORMAL);
 
         Moves bite = new Moves("Bite", Types.DARK, 60, 100, 25);
         Moves glare = new Moves("Glare", Types.NORMAL, 10, 75, 30); //power 0
@@ -43,6 +44,11 @@ public class Main {
         raticate.addMove(quickAttack);
         raticate.addMove(hyperFang);
 
+        kangaskhan.addMove(tackle);
+        kangaskhan.addMove(tailWhip);
+        kangaskhan.addMove(quickAttack);
+        kangaskhan.addMove(hyperFang);
+
 
         agatha.addPokemon(golbat);
         agatha.addPokemon(arbok);
@@ -51,8 +57,10 @@ public class Main {
 
         youngsterJoey.addPokemon(rattata);
         youngsterJoey.addPokemon(raticate);
+        youngsterJoey.addPokemon(kangaskhan);
         rattata.setTrainer(youngsterJoey);
         raticate.setTrainer(youngsterJoey);
+        kangaskhan.setTrainer(youngsterJoey);
 
 
        Battle b = new Battle(agatha,youngsterJoey);
