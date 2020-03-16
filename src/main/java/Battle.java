@@ -1,9 +1,13 @@
+import java.util.List;
+
 public class Battle {
     private Trainers player;
     private Trainers opponent;
     private Boolean inProgress;
     private Summary summary;
-
+    private String name;
+    private List<Pokemon> team;
+    Trainers finish = new Trainers(name, team);
 
     public Battle(Trainers player, Trainers opponent) {
         this.player = player;
@@ -109,21 +113,29 @@ public class Battle {
         } else {
             battling();
             b.getHasFainted();
+            endBattle();
             b.getTrainer().getBattlingPokemon();
         }
     }
 
 
 
+
     public void battling(){
-        while (!endBattle()){
+        Pokemon hpA = player.getBattlingPokemon();
+        Pokemon hpB = opponent.getBattlingPokemon();
+        while (!endBattle()) {
             roundA();
             roundB();
             System.out.println("end round");
-
             endBattle();
         }
+
     }
+}
+
+
+
 
 //    public void battleRound(){
 //        Pokemon a = player.getActivePokemon();
@@ -148,4 +160,4 @@ public class Battle {
 
 
 
-}
+
