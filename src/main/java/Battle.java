@@ -39,13 +39,13 @@ public class Battle {
     }
 
     public  Boolean endBattle() {
-        if (player.outOfPokemon()) {
+        if (player.outOfPokemon() || player.getActivePokemon()==null) {
             setLoser(player.getName());
             player.setLoses(player.getLoses() + 1);
             inProgress = false;
 
             return true;
-        } else if (opponent.outOfPokemon()) {
+        } else if (opponent.outOfPokemon() || opponent.getActivePokemon()==null) {
             setLoser(opponent.getName());
             opponent.setLoses(opponent.getLoses() + 1);
             inProgress = false;
@@ -114,11 +114,14 @@ public class Battle {
         Pokemon a = player.getActivePokemon();
         Pokemon b = opponent.getActivePokemon();
         //Pokemon attackFirst = whoGoesFirst();
+        if(opponent.getActivePokemon()==null){
+            endBattle();
+        }
         if (a.getHp() > 0 ) {
             a.pickMove();
             attack(a, b);
             takeDamage(a, b);
-            if(b.getHp()<=0){
+            if(opponent.getActivePokemon()==null){
                 endBattle();
             }
 
@@ -138,6 +141,9 @@ public class Battle {
     public void roundB() {
         Pokemon a = player.getActivePokemon();
         Pokemon b = opponent.getActivePokemon();
+        if(opponent.getActivePokemon()==null){
+            endBattle();
+        }
         if (b.getHp() > 0) {
             b.pickMove();
             attack(b, a);
@@ -145,7 +151,7 @@ public class Battle {
 
         } else {
 
-
+            endBattle();
             if(b.getTrainer().getBattlingPokemon(b)==null || a.getTrainer().getBattlingPokemon(a)==null){
                 endBattle();
             }
@@ -173,7 +179,9 @@ public class Battle {
 
         while (!endBattle()){
          roundA();
-
+            if(opponent.getActivePokemon()==null){
+                break;
+            }
          roundB();
          endBattle();
         }
