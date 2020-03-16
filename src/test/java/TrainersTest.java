@@ -87,18 +87,33 @@ public class TrainersTest {
     }
 
 
-    @Test
-    public void getBattlingPokemon() {
-        golbat.setHp(0);
-        String expected = "Arbok";
-        String actual = agatha.getBattlingPokemon().getName();
-        Assert.assertEquals(expected, actual);
-    }
+//    @Test
+//    public void getBattlingPokemon() {
+//        golbat.setHp(0);
+//        String expected = "Arbok";
+//        String actual = agatha.getBattlingPokemon().getName();
+//        Assert.assertEquals(expected, actual);
+//    }
 
     @Test
     public void outOfPokemon() {
-        golbat.setHp(0);
-        arbok.setHp(0);
+        golbat.setHasFainted(true);
+        arbok.setHasFainted(true);
         Assert.assertTrue(agatha.outOfPokemon());
     }
+
+    @Test
+    public void getActivePokemon(){
+        Assert.assertTrue(agatha.getActivePokemon().getName().equals("Golbat"));
+    }
+
+    @Test
+    public void getBattlingPokemon(){
+        golbat.setHasFainted(true);
+        agatha.getBattlingPokemon(agatha.getActivePokemon());
+        arbok.setHp(50);
+        agatha.getBattlingPokemon(agatha.getActivePokemon());
+        System.out.println(agatha.getActivePokemon().getName());
+    }
+
 }

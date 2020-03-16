@@ -85,7 +85,7 @@ public class Pokemon {
     }
 
     public void setCurrentMove(Moves move){
-            this.currentMove = move;
+        this.currentMove = move;
     }
 
     public Moves getCurrentMove(){

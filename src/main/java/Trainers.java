@@ -8,13 +8,14 @@ public class Trainers {
     private Integer wins;
     private Integer loses;
     private Pokemon activePokemon;
+    private Pokemon lastPokemon;
     public Trainers(String name, List<Pokemon> team){
         this.name = name;
         this.team = new ArrayList<>();
         this.team = team;
         wins = 0;
         loses = 0;
-        activePokemon = null;
+
     }
 
     public Trainers(String name){
@@ -22,6 +23,18 @@ public class Trainers {
         this.team = new ArrayList<>();
         wins = 0;
         loses = 0;
+    }
+
+    public Pokemon getLastPokemon() {
+        return lastPokemon;
+    }
+
+    public void setLastPokemon(Pokemon lastPokemon) {
+        this.lastPokemon = lastPokemon;
+    }
+
+    public void setActivePokemon(Pokemon activePokemon) {
+        this.activePokemon = activePokemon;
     }
 
     public List<Pokemon> getTeam() {
@@ -60,43 +73,72 @@ public class Trainers {
         return activePokemon;
     }
 
-    public Pokemon getBattlingPokemon(){
-
-        if(activePokemon == null){
-            activePokemon = team.get(0);
-            activePokemon.setBattling(true);
-            System.out.println(this.getName() + " sent out " + activePokemon.getName());
-            return activePokemon;
+    public Pokemon getBattlingPokemon(Pokemon toTakeOut){
+        if(!toTakeOut.getHasFainted()){
+            return toTakeOut;
         }
-
-        else if(!activePokemon.getHasFainted()){
-            return activePokemon;
+        toTakeOut.setHasFainted(true);
+        toTakeOut.setBattling(false);
+       Pokemon toTagIn = team
+                .stream()
+                .filter(p -> !p.getHasFainted())
+                .findFirst()
+                .orElse(null);
+       if(toTagIn == null){
+           System.out.println("hi");
+           return null;
+       }
+        setActivePokemon(toTagIn);
+        toTagIn.setBattling(true);
+        if(team.indexOf(toTagIn) == team.size()-1){
+            setLastPokemon(toTagIn);
         }
-
-
-            List<Pokemon> active = new ArrayList<>();
-            for(Pokemon p : team){
-                if(!p.getHasFainted()){
-                    active.add(p);
-                }
-            }
-
-            if(active.size() == 0){
-                return null;
-            }
-            else{
-                activePokemon = active.get(0);
-                activePokemon.setBattling(true);
-                System.out.println(this.getName() + " sent out " + activePokemon.getName());
-                return active.get(0);
-            }
-
+        System.out.println(this.getName() + " sent out " + toTagIn.getName());
+        return toTagIn;
     }
+
+//    public Pokemon getBattlingPokemon(){
+//
+//        if(activePokemon == null){
+//            activePokemon = team.get(0);
+//            activePokemon.setBattling(true);
+//            System.out.println(this.getName() + " sent out " + activePokemon.getName());
+//            return activePokemon;
+//        }
+//
+//        else if(!activePokemon.getHasFainted()){
+//            return activePokemon;
+//        }
+//
+//
+//        List<Pokemon> active = new ArrayList<>();
+//        for(Pokemon p : team){
+//            if(!p.getHasFainted()){
+//                active.add(p);
+//            }
+//        }
+//
+//        if(active.size() == 0){
+//            return null;
+//        }
+//        else{
+//            activePokemon = active.get(0);
+//            activePokemon.setBattling(true);
+//            System.out.println(this.getName() + " sent out " + activePokemon.getName());
+//            return active.get(0);
+//        }
+//
+//    }
 
 
 
     public Boolean outOfPokemon(){
-        if(getBattlingPokemon() == null){
+        int count = (int) team
+                .stream()
+                .filter(p -> p.getHasFainted())
+                .count();
+
+        if(count == team.size()){
             return true;
         }
         return false;
