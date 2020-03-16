@@ -77,6 +77,10 @@ public class Trainers {
         if(!toTakeOut.getHasFainted()){
             return toTakeOut;
         }
+        System.out.println("//////////////////");
+        System.out.println("Below is the problem. I cannot get the Raticate to not be active");
+        setActivePokemon(null);
+        System.out.println("/////////////////");
         toTakeOut.setHasFainted(true);
         toTakeOut.setBattling(false);
        Pokemon toTagIn = team

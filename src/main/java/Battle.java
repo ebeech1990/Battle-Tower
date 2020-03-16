@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.GOTO;
 import sun.awt.EventQueueItem;
 
 import java.util.Optional;
@@ -48,6 +49,7 @@ public class Battle {
             setLoser(opponent.getName());
             opponent.setLoses(opponent.getLoses() + 1);
             inProgress = false;
+
             return true;
         }
         return false;
@@ -112,10 +114,14 @@ public class Battle {
         Pokemon a = player.getActivePokemon();
         Pokemon b = opponent.getActivePokemon();
         //Pokemon attackFirst = whoGoesFirst();
-        if (a.getHp() > 0) {
+        if (a.getHp() > 0 ) {
             a.pickMove();
             attack(a, b);
             takeDamage(a, b);
+            if(b.getHp()<=0){
+                endBattle();
+            }
+
         } else {
             a.getHasFainted();
 
@@ -136,11 +142,9 @@ public class Battle {
             b.pickMove();
             attack(b, a);
             takeDamage(b, a);
-            if(b.getHasFainted() && opponent.getLastPokemon()==b ){
-                endBattle();
-            }
+
         } else {
-            b.getHasFainted();
+
 
             if(b.getTrainer().getBattlingPokemon(b)==null || a.getTrainer().getBattlingPokemon(a)==null){
                 endBattle();
@@ -169,6 +173,7 @@ public class Battle {
 
         while (!endBattle()){
          roundA();
+
          roundB();
          endBattle();
         }
