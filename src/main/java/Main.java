@@ -10,19 +10,19 @@ public class Main {
         Pokemon golbat = new Pokemon("Golbat", 75, Types.POISON);
         Pokemon arbok = new Pokemon("Arbok", 80, Types.POISON);
 
-        Pokemon rattata = new Pokemon("Rattata", 60, Types.NORMAL);
-        Pokemon raticate = new Pokemon("Raticate", 80, Types.NORMAL);
-        Pokemon kangaskhan = new Pokemon("Kangaskhan", 200, Types.NORMAL);
+        Pokemon rattata = new Pokemon("Rattata", 1, Types.NORMAL);//hp 60
+        Pokemon raticate = new Pokemon("Raticate", 1, Types.NORMAL);//hp 80
+        Pokemon kangaskhan = new Pokemon("Kangaskhan", 1, Types.NORMAL);//hp 200
 
         Moves bite = new Moves("Bite", Types.DARK, 60, 100, 25);
         Moves glare = new Moves("Glare", Types.NORMAL, 10, 75, 30); //power 0
         Moves screech = new Moves("Screech", Types.NORMAL, 10, 85, 40); //power 0
         Moves acid = new Moves("Acid", Types.POISON, 40, 100, 30);
 
-        Moves tackle = new Moves("Tackle", Types.NORMAL, 40, 100, 35);
-        Moves tailWhip = new Moves("Tail Whip", Types.NORMAL, 10, 100, 30); //power 0
-        Moves quickAttack = new Moves("Quick Attack", Types.NORMAL, 40, 100, 30);
-        Moves hyperFang = new Moves("Hyper Fang", Types.NORMAL, 80, 90, 15);
+        Moves tackle = new Moves("Tackle", Types.NORMAL, 0, 100, 35);//power 40
+        Moves tailWhip = new Moves("Tail Whip", Types.NORMAL, 0, 100, 30); //power 0, 10
+        Moves quickAttack = new Moves("Quick Attack", Types.NORMAL, 0, 100, 30);//power 40
+        Moves hyperFang = new Moves("Hyper Fang", Types.NORMAL, 0, 90, 15);//power 80
 
         golbat.addMove(bite);
         golbat.addMove(glare);
