@@ -102,13 +102,7 @@ public class Moves {
         return false;
     }
 
-    public  Boolean isSuperEffective(Types defenderType){ //move on pokemon
-        if(defenderType.weakAgainst.equals(this.getType().toString())){
-            System.out.println("super effective!");
-            return true;
-        }
-        return false;
-    }
+
 
 
 }

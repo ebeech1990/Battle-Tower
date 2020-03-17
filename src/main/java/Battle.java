@@ -1,31 +1,35 @@
-import com.sun.org.apache.bcel.internal.generic.GOTO;
-import sun.awt.EventQueueItem;
-
-import java.util.Optional;
-
 public class Battle {
     private Trainers player;
     private Trainers opponent;
-    private Boolean inProgress;
     private Summary summary;
     private String loser;
-
+    private String playerName;
+    private String opponentName;
+    private String playerActivePokemon;
+    private String opponentActivePokemon;
+    private String reset = SoutColor.ANSI_RESET;
 
 
     public Battle(Trainers player, Trainers opponent) {
         this.player = player;
         this.opponent = opponent;
-        inProgress = true;
         summary = new Summary();
+        this.player.setTrainerColor(SoutColor.ANSI_PURPLE);
+        this.opponent.setTrainerColor(SoutColor.ANSI_BLUE);
+        this.playerName =this.player.getTrainerColor() + this.player.getName() + reset;
+
+        this.opponentName =this.opponent.getTrainerColor() + this.opponent.getName() + reset;
+
+        summary.setBattleStart(playerName + " vs " + opponentName);
         System.out.println(summary.getBattleStart());
-        summary.setBattleStart(player.getName() + " vs " + opponent.getName());
         this.player.setActivePokemon(this.player.getTeam().get(0));
-        System.out.println(this.player.getName() + " sent out " + this.player.getActivePokemon().getName());
-
+        this.player.setActivePokemonColor(SoutColor.ANSI_RED);
+        this.playerActivePokemon = this.player.getActivePokemonColor() + this.player.getActivePokemon().getName() + reset;
+        Summary.sentOut(playerName,playerActivePokemon);
         this.opponent.setActivePokemon(this.opponent.getTeam().get(0));
-        System.out.println(this.opponent.getName() + " sent out " + this.opponent.getActivePokemon().getName());
-
-
+        this.opponent.setActivePokemonColor(SoutColor.ANSI_GREEN);
+        this.opponentActivePokemon = this.opponent.getActivePokemonColor() + this.opponent.getActivePokemon().getName() + reset;
+        Summary.sentOut(opponentName,opponentActivePokemon);
     }
 
 
@@ -42,14 +46,10 @@ public class Battle {
         if (player.outOfPokemon() || player.getActivePokemon()==null) {
             setLoser(player.getName());
             player.setLoses(player.getLoses() + 1);
-            inProgress = false;
-
             return true;
         } else if (opponent.outOfPokemon() || opponent.getActivePokemon()==null) {
             setLoser(opponent.getName());
             opponent.setLoses(opponent.getLoses() + 1);
-            inProgress = false;
-
             return true;
         }
         return false;
@@ -67,12 +67,16 @@ public class Battle {
 
     public static Integer decrementHP(Integer amountToDecrement, Pokemon p) {
         if (p.getHp() - amountToDecrement <= 0) {
+            System.out.println("************");
+            Summary.currentHP(p);
             p.fainted();
-            System.out.println(p.getName() + " has fainted.");
+            Summary.fainted(p);
+            System.out.println("************");
             p.getTrainer().getBattlingPokemon(p);
         } else {
+            Summary.currentHP(p);
             p.setHp(p.getHp() - amountToDecrement);
-            System.out.println(p.getName() + " took " + amountToDecrement + " damage. Current hp: " + p.getHp());
+            Summary.tookDamage(amountToDecrement,p);
         }
         return p.getHp();
     }
@@ -100,7 +104,7 @@ public class Battle {
 
     public static void takeDamage(Pokemon attacker, Pokemon defender) {
         Integer damage = attack(attacker, defender);
-        System.out.println(defender.getName() + " current hp: " + defender.getHp());
+
         decrementHP(damage, defender);
 
 
@@ -114,66 +118,28 @@ public class Battle {
         Pokemon a = player.getActivePokemon();
         Pokemon b = opponent.getActivePokemon();
         //Pokemon attackFirst = whoGoesFirst();
-        if(opponent.getActivePokemon()==null){
-            endBattle();
-        }
-        if (a.getHp() > 0 ) {
             a.pickMove();
             attack(a, b);
             takeDamage(a, b);
             if(opponent.getActivePokemon()==null){
                 endBattle();
             }
-
-        } else {
-            a.getHasFainted();
-
-            if( a.getTrainer().getBattlingPokemon(a)==null ||b.getTrainer().getBattlingPokemon(b)==null){
-                endBattle();
-            }
-            a.getTrainer().getBattlingPokemon(a);
-
-
-
         }
-    }
+
 
     public void roundB() {
         Pokemon a = player.getActivePokemon();
         Pokemon b = opponent.getActivePokemon();
-        if(opponent.getActivePokemon()==null){
-            endBattle();
-        }
-        if (b.getHp() > 0) {
             b.pickMove();
             attack(b, a);
             takeDamage(b, a);
-
-        } else {
-
-            endBattle();
-            if(b.getTrainer().getBattlingPokemon(b)==null || a.getTrainer().getBattlingPokemon(a)==null){
+            if(opponent.getActivePokemon()==null){
                 endBattle();
             }
-            b.getTrainer().getBattlingPokemon(b);
+        }
 
 
 
-        }
-    }
-
- public Boolean endConditionsMet(Pokemon p){
-        if(p.getHasFainted()){
-            return true;
-        }
-        else if(p.getTrainer().outOfPokemon()){
-            return true;
-        }
-        else if(p.getTrainer().getLastPokemon() == p){
-            return true;
-        }
-        return false;
- }
 
     public void battling(){
 
@@ -189,25 +155,7 @@ public class Battle {
         System.out.println(summary.getBattleEnd());
     }
 
-//    public void battleRound(){
-//        Pokemon a = player.getActivePokemon();
-//        Pokemon b = opponent.getActivePokemon();
-//        if (a.getHp() > 0){
-//            a.pickMove();
-//            attack(a,b);
-//            takeDamage(a,b);
-//        }
-//        else {
-//            a.getTrainer().getBattlingPokemon();
-//        }
-//        if (b.getHp() > 0) {
-//            b.pickMove();
-//            attack(b, a);
-//            takeDamage(b, a);
-//        }
-//        else{
-//            b.getTrainer().getBattlingPokemon();
-//        }
+
 
 
 

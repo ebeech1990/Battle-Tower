@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Trainers {
+public class Trainers{
 
     private List<Pokemon> team;
     private String name;
     private Integer wins;
     private Integer loses;
     private Pokemon activePokemon;
-    private Pokemon lastPokemon;
+    private String trainerColor;
+    private String activePokemonColor;
+
     public Trainers(String name, List<Pokemon> team){
         this.name = name;
         this.team = new ArrayList<>();
@@ -25,12 +27,20 @@ public class Trainers {
         loses = 0;
     }
 
-    public Pokemon getLastPokemon() {
-        return lastPokemon;
+    public void setTrainerColor(String trainerColor) {
+        this.trainerColor = trainerColor;
     }
 
-    public void setLastPokemon(Pokemon lastPokemon) {
-        this.lastPokemon = lastPokemon;
+    public void setActivePokemonColor(String activePokemonColor) {
+        this.activePokemonColor = activePokemonColor;
+    }
+
+    public String getTrainerColor() {
+        return trainerColor;
+    }
+
+    public String getActivePokemonColor() {
+        return activePokemonColor;
     }
 
     public void setActivePokemon(Pokemon activePokemon) {
@@ -49,9 +59,6 @@ public class Trainers {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public Integer getWins() {
         return wins;
@@ -77,10 +84,7 @@ public class Trainers {
         if(!toTakeOut.getHasFainted()){
             return toTakeOut;
         }
-        //////////////////
-        //Below is the problem. I cannot get the Raticate to not be active");
         setActivePokemon(null);
-        /////////////////");
         toTakeOut.setHasFainted(true);
         toTakeOut.setBattling(false);
        Pokemon toTagIn = team
@@ -89,57 +93,20 @@ public class Trainers {
                 .findFirst()
                 .orElse(null);
        if(toTagIn == null){
-           System.out.println("hi");
            return null;
        }
         setActivePokemon(toTagIn);
         toTagIn.setBattling(true);
-        if(team.indexOf(toTagIn) == team.size()-1){
-            setLastPokemon(toTagIn);
-        }
-        System.out.println(this.getName() + " sent out " + toTagIn.getName());
+        toTagIn.setColor(this.getActivePokemonColor());
+        Summary.sentOut(this.getName(),toTagIn.getName());
         return toTagIn;
     }
-
-//    public Pokemon getBattlingPokemon(){
-//
-//        if(activePokemon == null){
-//            activePokemon = team.get(0);
-//            activePokemon.setBattling(true);
-//            System.out.println(this.getName() + " sent out " + activePokemon.getName());
-//            return activePokemon;
-//        }
-//
-//        else if(!activePokemon.getHasFainted()){
-//            return activePokemon;
-//        }
-//
-//
-//        List<Pokemon> active = new ArrayList<>();
-//        for(Pokemon p : team){
-//            if(!p.getHasFainted()){
-//                active.add(p);
-//            }
-//        }
-//
-//        if(active.size() == 0){
-//            return null;
-//        }
-//        else{
-//            activePokemon = active.get(0);
-//            activePokemon.setBattling(true);
-//            System.out.println(this.getName() + " sent out " + activePokemon.getName());
-//            return active.get(0);
-//        }
-//
-//    }
-
 
 
     public Boolean outOfPokemon(){
         int count = (int) team
                 .stream()
-                .filter(p -> p.getHasFainted())
+                .filter(Pokemon::getHasFainted)
                 .count();
 
         if(count == team.size()){

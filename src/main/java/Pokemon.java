@@ -11,6 +11,7 @@ public class Pokemon {
     private Boolean hasFainted;
     private Integer startingHP;
     private Moves currentMove;
+    private String color;
 
     public Pokemon(String name, Integer hp, Types type){
         this.name = name;
@@ -22,7 +23,13 @@ public class Pokemon {
         startingHP = hp;
     }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
 
+    public String getColor() {
+        return color;
+    }
 
     public void addMove(Moves m) {
         this.moves.add(m);
