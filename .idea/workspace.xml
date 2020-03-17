@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="92a2c978-b2d9-4a09-9363-4194f0f4a4b4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SoutColor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Trainers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Trainers.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Arquillian JUnit Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z2oiDMZWDeWu19GlwIsmp2sWt5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Battle-Tower" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PokemonTest.isSuperEffective" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Battle-Tower" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PokemonTest" />
+      <option name="METHOD_NAME" value="isSuperEffective" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainersTest.getActivePokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Battle-Tower" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrainersTest" />
+      <option name="METHOD_NAME" value="getActivePokemon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainersTest.getBattlingPokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Battle-Tower" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrainersTest" />
+      <option name="METHOD_NAME" value="getBattlingPokemon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TrainersTest.outOfPokemon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Battle-Tower" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TrainersTest" />
+      <option name="METHOD_NAME" value="outOfPokemon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TrainersTest.getBattlingPokemon" />
+        <item itemvalue="JUnit.TrainersTest.outOfPokemon" />
+        <item itemvalue="JUnit.TrainersTest.getActivePokemon" />
+        <item itemvalue="JUnit.PokemonTest.isSuperEffective" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="92a2c978-b2d9-4a09-9363-4194f0f4a4b4" name="Default Changelist" comment="" />
+      <created>1584046674324</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584046674324</updated>
+      <workItem from="1584046676263" duration="20269000" />
+      <workItem from="1584189858303" duration="65306000" />
+      <workItem from="1584475682720" duration="261000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="250" y="9" key="#Project_Structure" timestamp="1584397246703">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="250" y="9" key="#Project_Structure/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584397246703" />
+    <state x="250" y="31" key="#Project_Structure/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584110978319" />
+    <state x="100" y="100" width="1080" height="600" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1584206712454">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="100" y="100" width="1080" height="600" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584206712454" />
+    <state x="463" y="36" key="#com.intellij.ide.util.MemberChooser" timestamp="1584449294122">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="463" y="36" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584395080014" />
+    <state x="463" y="36" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584449294122" />
+    <state x="463" y="36" key="#com.intellij.ide.util.MemberChooser/0.0.1280.800@0.0.1280.800" timestamp="1584382814709" />
+    <state x="463" y="56" key="#com.intellij.ide.util.MemberChooser/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584119568090" />
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584448344668">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="378" y="154" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584448344668" />
+    <state width="1238" height="263" key="GridCell.Tab.0.bottom" timestamp="1584453017930">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1878" height="144" key="GridCell.Tab.0.bottom/0.0.1280.800/-284.-1080.1920.1080@-284.-1080.1920.1080" timestamp="1584402339439" />
+    <state width="1238" height="144" key="GridCell.Tab.0.bottom/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584402296845" />
+    <state width="1238" height="179" key="GridCell.Tab.0.bottom/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584449613273" />
+    <state width="1238" height="211" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1584383325797" />
+    <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104566002" />
+    <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353910" />
+    <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.728@0.23.1280.728" timestamp="1584061280652" />
+    <state width="1218" height="164" key="GridCell.Tab.0.bottom/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873943" />
+    <state width="1238" height="263" key="GridCell.Tab.0.bottom/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017930" />
+    <state width="1238" height="179" key="GridCell.Tab.0.bottom/0.23.1280.732/-311.-1057.1920.1057@0.23.1280.732" timestamp="1584451186961" />
+    <state width="1238" height="263" key="GridCell.Tab.0.center" timestamp="1584453017929">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1878" height="144" key="GridCell.Tab.0.center/0.0.1280.800/-284.-1080.1920.1080@-284.-1080.1920.1080" timestamp="1584402339437" />
+    <state width="1238" height="144" key="GridCell.Tab.0.center/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584402296843" />
+    <state width="1238" height="179" key="GridCell.Tab.0.center/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584449613270" />
+    <state width="1238" height="211" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1584383325796" />
+    <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104565997" />
+    <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353909" />
+    <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.728@0.23.1280.728" timestamp="1584061280651" />
+    <state width="1218" height="164" key="GridCell.Tab.0.center/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873936" />
+    <state width="1238" height="263" key="GridCell.Tab.0.center/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017929" />
+    <state width="1238" height="179" key="GridCell.Tab.0.center/0.23.1280.732/-311.-1057.1920.1057@0.23.1280.732" timestamp="1584451186958" />
+    <state width="1238" height="263" key="GridCell.Tab.0.left" timestamp="1584453017924">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1878" height="144" key="GridCell.Tab.0.left/0.0.1280.800/-284.-1080.1920.1080@-284.-1080.1920.1080" timestamp="1584402339436" />
+    <state width="1238" height="144" key="GridCell.Tab.0.left/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584402296841" />
+    <state width="1238" height="179" key="GridCell.Tab.0.left/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584449613269" />
+    <state width="1238" height="211" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1584383325795" />
+    <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104565996" />
+    <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353908" />
+    <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.728@0.23.1280.728" timestamp="1584061280651" />
+    <state width="1218" height="164" key="GridCell.Tab.0.left/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873926" />
+    <state width="1238" height="263" key="GridCell.Tab.0.left/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017924" />
+    <state width="1238" height="179" key="GridCell.Tab.0.left/0.23.1280.732/-311.-1057.1920.1057@0.23.1280.732" timestamp="1584451186954" />
+    <state width="1238" height="263" key="GridCell.Tab.0.right" timestamp="1584453017930">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1878" height="144" key="GridCell.Tab.0.right/0.0.1280.800/-284.-1080.1920.1080@-284.-1080.1920.1080" timestamp="1584402339438" />
+    <state width="1238" height="144" key="GridCell.Tab.0.right/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584402296844" />
+    <state width="1238" height="179" key="GridCell.Tab.0.right/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584449613271" />
+    <state width="1238" height="211" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1584383325796" />
+    <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.726/-284.-1057.1920.1057@0.23.1280.726" timestamp="1584104565998" />
+    <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584050353909" />
+    <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.728@0.23.1280.728" timestamp="1584061280652" />
+    <state width="1218" height="164" key="GridCell.Tab.0.right/0.23.1280.729/-284.-1057.1920.1057@-284.-1057.1920.1057" timestamp="1584120873939" />
+    <state width="1238" height="263" key="GridCell.Tab.0.right/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017930" />
+    <state width="1238" height="179" key="GridCell.Tab.0.right/0.23.1280.732/-311.-1057.1920.1057@0.23.1280.732" timestamp="1584451186960" />
+    <state width="1238" height="263" key="GridCell.Tab.1.bottom" timestamp="1584453017933">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1238" height="263" key="GridCell.Tab.1.bottom/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584401100563" />
+    <state width="1238" height="263" key="GridCell.Tab.1.bottom/0.0.1280.800@0.0.1280.800" timestamp="1584382415766" />
+    <state width="1238" height="263" key="GridCell.Tab.1.bottom/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017933" />
+    <state width="1238" height="263" key="GridCell.Tab.1.center" timestamp="1584453017932">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1238" height="263" key="GridCell.Tab.1.center/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584401100560" />
+    <state width="1238" height="263" key="GridCell.Tab.1.center/0.0.1280.800@0.0.1280.800" timestamp="1584382415764" />
+    <state width="1238" height="263" key="GridCell.Tab.1.center/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017932" />
+    <state width="1238" height="263" key="GridCell.Tab.1.left" timestamp="1584453017931">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1238" height="263" key="GridCell.Tab.1.left/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584401100556" />
+    <state width="1238" height="263" key="GridCell.Tab.1.left/0.0.1280.800@0.0.1280.800" timestamp="1584382415764" />
+    <state width="1238" height="263" key="GridCell.Tab.1.left/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017931" />
+    <state width="1238" height="263" key="GridCell.Tab.1.right" timestamp="1584453017932">
+      <screen x="0" y="23" width="1280" height="731" />
+    </state>
+    <state width="1238" height="263" key="GridCell.Tab.1.right/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584401100561" />
+    <state width="1238" height="263" key="GridCell.Tab.1.right/0.0.1280.800@0.0.1280.800" timestamp="1584382415765" />
+    <state width="1238" height="263" key="GridCell.Tab.1.right/0.23.1280.731/-311.-1057.1920.1057@0.23.1280.731" timestamp="1584453017932" />
+    <state x="178" y="62" key="Maven.ArtifactSearchDialog" timestamp="1584205464156">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="178" y="62" key="Maven.ArtifactSearchDialog/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584205464156" />
+    <state x="164" y="-959" key="SettingsEditor" timestamp="1584120973045">
+      <screen x="-284" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="164" y="-959" key="SettingsEditor/0.0.1280.800/-284.-1080.1920.1080@-284.-1080.1920.1080" timestamp="1584120973045" />
+    <state x="412" y="134" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1584208901445">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="412" y="134" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.800/-284.-1080.1920.1080@0.0.1280.800" timestamp="1584208901445" />
+    <state x="308" y="122" width="683" height="486" key="find.popup" timestamp="1584046771067">
+      <screen x="0" y="23" width="1280" height="728" />
+    </state>
+    <state x="308" y="122" width="683" height="486" key="find.popup/0.23.1280.728/-284.-1057.1920.1057@0.23.1280.728" timestamp="1584046771067" />
+    <state x="346" y="23" key="refactoring.ChangeSignatureDialog" timestamp="1584447648525">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="346" y="23" key="refactoring.ChangeSignatureDialog/0.0.1280.800/-311.-1080.1920.1080@0.0.1280.800" timestamp="1584447648525" />
+    <state x="315" y="75" width="670" height="676" key="search.everywhere.popup" timestamp="1584060297255">
+      <screen x="0" y="23" width="1280" height="728" />
+    </state>
+    <state x="315" y="75" width="670" height="676" key="search.everywhere.popup/0.23.1280.728@0.23.1280.728" timestamp="1584060297255" />
+  </component>
+</project>
