@@ -8,8 +8,7 @@ public class Trainers{
     private Integer wins;
     private Integer loses;
     private Pokemon activePokemon;
-    private String trainerColor;
-    private String activePokemonColor;
+
 
     public Trainers(String name, List<Pokemon> team){
         this.name = name;
@@ -27,21 +26,6 @@ public class Trainers{
         loses = 0;
     }
 
-    public void setTrainerColor(String trainerColor) {
-        this.trainerColor = trainerColor;
-    }
-
-    public void setActivePokemonColor(String activePokemonColor) {
-        this.activePokemonColor = activePokemonColor;
-    }
-
-    public String getTrainerColor() {
-        return trainerColor;
-    }
-
-    public String getActivePokemonColor() {
-        return activePokemonColor;
-    }
 
     public void setActivePokemon(Pokemon activePokemon) {
         this.activePokemon = activePokemon;
@@ -97,7 +81,6 @@ public class Trainers{
        }
         setActivePokemon(toTagIn);
         toTagIn.setBattling(true);
-        toTagIn.setColor(this.getActivePokemonColor());
         Summary.sentOut(this.getName(),toTagIn.getName());
         return toTagIn;
     }

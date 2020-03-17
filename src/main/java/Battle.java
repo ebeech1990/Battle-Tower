@@ -3,33 +3,22 @@ public class Battle {
     private Trainers opponent;
     private Summary summary;
     private String loser;
-    private String playerName;
-    private String opponentName;
-    private String playerActivePokemon;
-    private String opponentActivePokemon;
-    private String reset = SoutColor.ANSI_RESET;
 
 
     public Battle(Trainers player, Trainers opponent) {
         this.player = player;
         this.opponent = opponent;
         summary = new Summary();
-        this.player.setTrainerColor(SoutColor.ANSI_PURPLE);
-        this.opponent.setTrainerColor(SoutColor.ANSI_BLUE);
-        this.playerName =this.player.getTrainerColor() + this.player.getName() + reset;
 
-        this.opponentName =this.opponent.getTrainerColor() + this.opponent.getName() + reset;
 
-        summary.setBattleStart(playerName + " vs " + opponentName);
+        summary.setBattleStart(this.player.getName() + " vs " + this.opponent.getName());
         System.out.println(summary.getBattleStart());
         this.player.setActivePokemon(this.player.getTeam().get(0));
-        this.player.setActivePokemonColor(SoutColor.ANSI_RED);
-        this.playerActivePokemon = this.player.getActivePokemonColor() + this.player.getActivePokemon().getName() + reset;
-        Summary.sentOut(playerName,playerActivePokemon);
+
+        Summary.sentOut(this.player.getName(),this.player.getActivePokemon().getName());
         this.opponent.setActivePokemon(this.opponent.getTeam().get(0));
-        this.opponent.setActivePokemonColor(SoutColor.ANSI_GREEN);
-        this.opponentActivePokemon = this.opponent.getActivePokemonColor() + this.opponent.getActivePokemon().getName() + reset;
-        Summary.sentOut(opponentName,opponentActivePokemon);
+
+        Summary.sentOut(this.opponent.getName(),this.opponent.getActivePokemon().getName());
     }
 
 
