@@ -19,12 +19,6 @@ public class Connector
         Connection conn = null;
 
         try {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (ClassNotFoundException e)
-            {
-                LOGGER.log(WARNING, "Couldn't find the driver.");
-            }
             conn = DriverManager.getConnection(URL, USER, PASS);
             LOGGER.log(INFO, "Connection Established to AWS MYSQL Database");
         } catch (SQLException e)
