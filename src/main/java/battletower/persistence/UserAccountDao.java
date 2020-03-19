@@ -1,6 +1,8 @@
 package battletower.persistence;
 
 
+import battletower.utils.Connector;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,7 +25,7 @@ public class UserAccountDao implements Dao<UserAccount> {
         Connection connection = null;
 
         try {
-            connection = ConnectionFactory.getConnection();
+            connection = Connector.getConnection();
             Statement stmt = connection.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM games");
             while(rs.next())
