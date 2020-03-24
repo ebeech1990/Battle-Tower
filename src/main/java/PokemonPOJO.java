@@ -5,9 +5,8 @@ public class PokemonPOJO {
     private List<String> types;
     private Integer weight;
 
-    public PokemonPOJO(String name, Integer weight) {
-        this.name = name;
-        this.weight = weight;
+    public PokemonPOJO() {
+
     }
 
     public String getName() {
@@ -26,5 +25,13 @@ public class PokemonPOJO {
 
     public void setWeight(Integer weight) {
         this.weight = weight;
+    }
+
+    public void setTypes(List<String> types) {
+        this.types = types;
+    }
+
+    public List<String> getTypes() {
+        return types;
     }
 }
