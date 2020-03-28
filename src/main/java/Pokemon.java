@@ -2,6 +2,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Pokemon {
@@ -69,6 +70,36 @@ public class Pokemon {
             System.out.println("need to add at least one move and no more than 4(max)");
            return null;
         }
+    }
+
+    public void replaceMove(String pendingMove, Move moveToReplace) throws IOException, JSONException {
+        removeMove(moveToReplace);
+        addMoves(pendingMove);
+
+    }
+
+    public void clearAllMoves(){
+        moves.clear();
+    }
+
+    public void removeMove(Move m){
+        moves.remove(m);
+    }
+
+    public void getFourRandomLearnableMoves() throws IOException, JSONException {
+        moves.clear();
+        int count = 1;
+        List<Integer> used = new ArrayList<>();
+        while (count <= 4){
+            int index = Utils.getRandomNumber(1, learnableMoves.size());
+            if(used.contains(index)){
+                break;
+            }
+            moves.add(new Move(learnableMoves.get(index)));
+            used.add(index);
+            count++;
+        }
+
     }
 
     public List<Move> getMoves(){
@@ -185,6 +216,7 @@ public class Pokemon {
 
     public Move pickMove(){
         //random for now
+        setCurrentMove(null);
         Integer numOfMoves = getMovesWithPP();
         Move pickedMove;
         if(numOfMoves == 1){

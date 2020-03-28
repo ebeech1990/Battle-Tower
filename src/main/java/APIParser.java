@@ -17,7 +17,7 @@ public class APIParser {
         this.jo = initialToJSONObject(urlBuilder(creationType,creationName));
     }
 
-    public String urlBuilder(String creationType, String creationName){
+    public  String urlBuilder(String creationType, String creationName){
         return "https://pokeapi.co/api/v2/" + creationType + "/" + creationName;
     }
 

@@ -16,6 +16,11 @@ public  class PokemonBuilder {
 
     }
 
+    public static String getPokemonNameFromId(int id) throws IOException, JSONException {
+        JSONObject singleUse = APIParser.initialToJSONObject("https://pokeapi.co/api/v2/pokemon/" + id);
+        return singleUse.getString("name");
+    }
+
     public Integer getPokemonSpeed() throws JSONException {
         return Integer.parseInt(getPokemonStatFromApi("stats", "speed", "base_stat"));
     }

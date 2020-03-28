@@ -20,7 +20,8 @@ public enum Types {
     PSYCHIC("FIGHTING", "PSYCHIC"),
     GHOST("GHOST", "DARK"),
     ROCK("ICE", "FIGHTING"),
-    STEEL("ICE", "WATER");
+    STEEL("ICE", "WATER"),
+    FAIRY("FIGHTING", "POISON");
 
     String strongAgainst;
     String weakAgainst;

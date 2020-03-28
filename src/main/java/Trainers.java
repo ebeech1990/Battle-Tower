@@ -1,3 +1,6 @@
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +29,23 @@ public class Trainers{
         loses = 0;
     }
 
+    public void addNRandomPokemon(int numOfPokemon) throws IOException, JSONException {
+        team.clear();
+        int count = 1;
+        while (count <= numOfPokemon){
+            int id = Utils.getRandomNumber(1, 300);
+            team.add(new Pokemon(PokemonBuilder.getPokemonNameFromId(id)));
+            count++;
+        }
+    }
+
+    public void quickSetUp(int numOfPokemon) throws IOException, JSONException {
+        addNRandomPokemon(numOfPokemon);
+        for(Pokemon p : team){
+            p.setTrainer(this);
+            p.getFourRandomLearnableMoves();
+        }
+    }
 
     public void setActivePokemon(Pokemon activePokemon) {
         this.activePokemon = activePokemon;
