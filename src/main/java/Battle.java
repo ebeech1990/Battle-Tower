@@ -44,7 +44,7 @@ public class Battle {
         return false;
     }
 
-//    public Pokemon whoGoesFirst() {
+//    public PokemonPojo whoGoesFirst() {
 //
 //        Integer num = BattleUtils.getRandomNumber(1, 3);
 //        //will compare speed stat later
@@ -58,7 +58,7 @@ public class Battle {
         if (p.getHp() - amountToDecrement <= 0) {
             System.out.println("************");
             Summary.currentHP(p);
-            p.fainted();
+            p.setHasFainted(true);
             Summary.fainted(p);
             System.out.println("************");
             p.getTrainer().getBattlingPokemon(p);
@@ -71,8 +71,7 @@ public class Battle {
     }
 
     public static Boolean isSuperEffective(Types type1, Types type2) { //move on pokemon
-        if (type1.weakAgainst.equals(type2.toString())) {
-            System.out.println("super effective!");
+        if (type2.weakAgainst.equals(type1.toString())) {
             return true;
         }
         return false;
@@ -82,8 +81,9 @@ public class Battle {
     public static Integer attack(Pokemon attacker, Pokemon defender) {
         Integer damage;
         Types moveType = attacker.getCurrentMove().getType();
-        Types defType = defender.getType();
+        Types defType = defender.getPrimaryType();
         if (isSuperEffective(moveType, defType)) {
+            System.out.println("super effective!");
             damage = attacker.getCurrentMove().getPower() * 2;
         } else {
             damage = attacker.getCurrentMove().getPower();
@@ -106,7 +106,7 @@ public class Battle {
 
         Pokemon a = player.getActivePokemon();
         Pokemon b = opponent.getActivePokemon();
-        //Pokemon attackFirst = whoGoesFirst();
+        //PokemonPojo attackFirst = whoGoesFirst();
             a.pickMove();
             attack(a, b);
             takeDamage(a, b);

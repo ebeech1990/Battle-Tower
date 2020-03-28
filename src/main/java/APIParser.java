@@ -35,7 +35,6 @@ public class APIParser {
         StringBuilder result = new StringBuilder();
         String line;
 
-
         URLConnection urlConnection = new URL(url).openConnection();
         urlConnection.addRequestProperty("User-Agent", "Mozilla");
 

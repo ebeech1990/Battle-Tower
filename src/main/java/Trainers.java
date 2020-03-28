@@ -36,7 +36,9 @@ public class Trainers{
     }
 
     public void addPokemon(Pokemon p) {
+
         this.team.add(p);
+        p.setTrainer(this);
     }
 
     public String getName() {
@@ -71,7 +73,7 @@ public class Trainers{
         setActivePokemon(null);
         toTakeOut.setHasFainted(true);
         toTakeOut.setBattling(false);
-       Pokemon toTagIn = team
+        Pokemon toTagIn = team
                 .stream()
                 .filter(p -> !p.getHasFainted())
                 .findFirst()

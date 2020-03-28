@@ -1,39 +1,32 @@
-public class Moves {
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Move {
     private String name;
     private Types type;
     private Integer power;
     private Integer accuracy;
     private Integer pp;
-    private boolean useable;
-    private Integer originalPP;
-    private Integer originalAccuracy;
-    private Integer originalPower;
+    private boolean usable = true;
+    private final Map<String, Integer> ORIGINAL_STATS;
 
-
-    public Moves(String name, Types type, Integer power, Integer accuracy, Integer pp){
+    public Move(String name) throws IOException, JSONException {
+        MoveBuilder builder = new MoveBuilder(name);
+        builder.build(this);
+        ORIGINAL_STATS = new HashMap<>();
+        ORIGINAL_STATS.put("power", power);
+        ORIGINAL_STATS.put("accuracy", accuracy);
+        ORIGINAL_STATS.put("pp", pp);
         this.name = name;
-        this.type = type;
-        this.power = power;
-        this.accuracy = accuracy;
-        this.pp = pp;
-        useable = true;
-        originalPP = pp;
-        originalAccuracy = accuracy;
-        originalPower = power;
-
     }
 
-    public Integer getOriginalPP() {
-        return originalPP;
+    public Map<String, Integer> getOriginalStats(){
+        return ORIGINAL_STATS;
     }
 
-    public Integer getOriginalAccuracy() {
-        return originalAccuracy;
-    }
-
-    public Integer getOriginalPower() {
-        return originalPower;
-    }
 
     public String getName() {
         return name;
@@ -75,12 +68,12 @@ public class Moves {
         this.pp = pp;
     }
 
-    public boolean isUseable() {
-        return useable;
+    public boolean isUsable() {
+        return usable;
     }
 
-    public void setUseable(boolean useable) {
-        this.useable = useable;
+    public void setUsable(boolean usable) {
+        this.usable = usable;
     }
 
 
@@ -88,7 +81,7 @@ public class Moves {
     public Integer decrementPP(){
         this.setPp(this.getPp()-1);
         if(outOfPP()){
-            this.setUseable(false);
+            this.setUsable(false);
             return -1;
         }
         return this.getPp();
@@ -96,13 +89,10 @@ public class Moves {
 
     public Boolean outOfPP(){
         if(this.getPp()<=0){
-            this.setUseable(false);
+            this.setUsable(false);
             return true;
         }
         return false;
     }
-
-
-
 
 }
